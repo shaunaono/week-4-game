@@ -13,56 +13,52 @@
   </head>
   <body>
 <!-- Jumbotron with title and directions-->
-    <div class="jumbotron jumbotron-fluid bg-warning">
+    <div class="jumbotron jumbotron-fluid" style="background: url(assets/images/alex-6725.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
   <div class="container">
-    <h1 class="display-3 text-center ">Bean Counter Game</h1>
-    <p class="lead text-center">Directions</p>
+    <h1 class="display-2 text-white text-center ">Coffee Bean Counter Game</h1>
+    <p class="display-3 text-white text-center">Directions</p>
+    <p class="display-4 text-white text-center">Click on the cups to reach the Bean Goal. <br> If you Win... You are a pro bean counter!<br> But if you lose... NO beans for you!</p>
   </div>
  </div>
 
  <!-- Bean Goal and Bean Counter-->
- <div class="container-fluid">
-<div class="row">
-	<div class="col"></div>
-		<div class="col-md-4" id="beanGoal">
-			<div class="card border-0">
- 				 <div class="card-block">
-   					 <!--<p class="card-text h4 text-center ">Can you match this total?</p>-->
-  					</div>
- 				 <img class="card-img-bottom" src="assets/images/yourBeanGoal.png" alt="Your Bean Total Goal">
- 				</div>
-			</div>
-<div class="col-md-4" id="beanCounter">
-	<div class="card border-0">
-  		<div class="card-block">
-   				 <!--<p class="card-text h4 text-center">Keep counting...</p>-->
- 			 </div>
- 		 <img class="card-img-bottom" src="assets/images/yourBeanScore.png" alt="Your Bean Score">
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md">
 		</div>
- 	<div class="col"></div>
-</div>
-	</div>
-<br><br>
-
-<!-- Empty Row-->
-<div class="row">
-	<div class="col-md-12"></div>
-</div>
-
-<!-- Cup Images with Random Numbers-->
-		<div class=	"container">
-			<div id="cups">
-				<div class="row">
-					<div class="col-md"></div>
-						<div class="col-md-12 text-center">
-							<img src="assets/images/google+.png" class="rounded" alt="google" id="googleCup">
-							<img src="assets/images/amazon.png" class="rounded" alt="amazon" id="amazonCup">
-							<img src="assets/images/instagram.png" class="rounded" alt="instagram" id="instagramCup">
-							<img src="assets/images/linkedin.png" class="rounded" alt="linkedin" id="linkedinCup">
+			<div class="col-md-4" >	
+				<div class="card card-inverse">
+ 					 <img class="card-img" src="assets/images/chalkboard.jpg" alt="Wins">
+ 						 <div class="card-img-overlay">
+   							 <h4 class="card-title text-center display-4">Bean Goal</h4><br><br>
+   							 <p class="card-text display-2 text-center text-white" id="beanGoal"></p>
+ 							 </div>
+						</div>			
 					</div>
 				<div class="col-md">
 			</div>
+<div class="col-md-4" >	
+	<div class="card card-inverse">
+  		<img class="card-img" src="assets/images/chalkboard.jpg" alt="Loses">
+  			<div class="card-img-overlay">
+   				 <h4 class="card-title text-center display-4">Bean Score</h4><br><br>
+   				 <p class="card-text display-2 text-center text-white" id="yourBeanScore"></p>
+ 				 </div>
+			</div>			
+		</div>
+	<br><br>
+					<div class="col-md">
+				</div>
+					</div>
+				</div>
+				<br><br>
+<!-- Cup Images with Random Numbers-->
+		<div class=	"container">			
+			<div class="row">
+				<div class="col-md"></div>
+					<div class="col-md-12 text-center" id="cups">
+				</div>
+			<div class="col-md">
 		</div>
 	</div>
 </div>
@@ -72,21 +68,23 @@
 	<div class="row">
 		<div class="col-md">
 		</div>
-			<div class="col-md-4" id="winsBox">	
+			<div class="col-md-4" >	
 				<div class="card card-inverse">
  					 <img class="card-img" src="assets/images/chalkboard.jpg" alt="Wins">
  						 <div class="card-img-overlay">
-   							 <h4 class="card-title text-center display-4">Wins</h4>
+   							 <h4 class="card-title text-center display-4">Wins</h4><br><br>
+   							 <p class="card-text display-2 text-center text-white" id="winsBox"></p>
  							 </div>
 						</div>			
 					</div>
 				<div class="col-md">
 			</div>
-<div class="col-md-4" id="losesBox">	
+<div class="col-md-4" >	
 	<div class="card card-inverse">
   		<img class="card-img" src="assets/images/chalkboard.jpg" alt="Loses">
   			<div class="card-img-overlay">
-   				 <h4 class="card-title text-center display-4">Loses</h4>
+   				 <h4 class="card-title text-center display-4">Loses</h4><br><br>
+   				 <p class="card-text display-2 text-center text-white" id="losesBox"></p>
  				 </div>
 			</div>			
 		</div>
@@ -96,17 +94,12 @@
 	</div>
 </div>
 <br><br>
-<!-- jQuery first, then Tether -->
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<!-- Script -->
  	<script type="text/javascript" src="assets/javascript/game.js"></script>
-	<script type="text/javascript">	    
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
-</script>
+	
 
 
 
